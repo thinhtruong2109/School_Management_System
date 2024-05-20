@@ -283,7 +283,7 @@ function DanhSachThanhVien()
               projectScore: data[0].projectScore,
               midTermScore: data[0].midTermScore,
               finalExamScore: data[0].finalExamScore,
-              finalGrade: data[0].finalGrade.toFixed(2),
+              finalGrade: typeof data[0].finalGrade === 'number' ? data[0].finalGrade.toFixed(2) : null,
             };
             console.log("123:  .",row.assignmentScore)
             tableRows.push(row);
