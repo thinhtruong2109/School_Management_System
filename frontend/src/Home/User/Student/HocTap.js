@@ -212,7 +212,7 @@ function updateFinishedDataPass(FinishedData) {
   if (FinishedData&&Array.isArray(FinishedData)) {
     FinishedData.forEach(course => {
       // Create a new row object for each course
-      const roundedFinalGrade = parseFloat((course.finalGrade).toFixed(2));
+      const roundedFinalGrade = typeof course.finalGrade === 'number' ? course.finalGrade.toFixed(2) : null;
       console.log("helloPass2",course)
       let tinChi;
       if (course.courseLevel==="BEGINNER") tinChi="3"
@@ -295,7 +295,7 @@ function updateFinishedDataFail(FinishedData) {
   if (FinishedData&&Array.isArray(FinishedData)) {
     FinishedData.forEach(course => {
       // Create a new row object for each course
-      const roundedFinalGrade = parseFloat((course.finalGrade).toFixed(2));
+      const roundedFinalGrade = typeof course.finalGrade === 'number' ? course.finalGrade.toFixed(2) : null;
       console.log("HelloFail2",course)
       let tinChi;
       if (course.courseLevel==="BEGINNER") tinChi="3"
@@ -456,7 +456,7 @@ const [TableFlag, setTableFlag]= useState("InProgress");
       const response = await axios.get(`http://localhost:8080/student/${StudentUserID}/credits-gpa`);
       const { data } = response.data;
       console.log(data)
-      const GPA = parseFloat((data.gpaOnScaleFour).toFixed(2));
+      const GPA =  typeof data.gpaOnScaleFour === 'number' ? data.gpaOnScaleFour.toFixed(2) : null;
       setstudentGPA(GPA);
       setstudentCredits(data.totalCredits);
       
@@ -521,7 +521,7 @@ const [TableFlag, setTableFlag]= useState("InProgress");
         MaMH: MarkData.sheetMarkForBeginner.courseId,
         TenMonHoc: MarkData.sheetMarkForBeginner.courseName,
         courseLevel: MarkData.sheetMarkForBeginner.courseLevel,
-        finalGrade: parseFloat((MarkData.sheetMarkForBeginner.finalGrade).toFixed(2))
+        finalGrade:  typeof MarkData.sheetMarkForBeginner.finalGrade === 'number' ? MarkData.sheetMarkForBeginner.finalGrade.toFixed(2) : null,
       }
       tableRows.push(rowBeginner);
       console.log("Beginner---",rowBeginner)
@@ -532,7 +532,7 @@ const [TableFlag, setTableFlag]= useState("InProgress");
         MaMH: MarkData.sheetMarkForIntermediate.courseId,
         TenMonHoc: MarkData.sheetMarkForIntermediate.courseName,
         courseLevel: MarkData.sheetMarkForIntermediate.courseLevel,
-        finalGrade: parseFloat((MarkData.sheetMarkForIntermediate.finalGrade).toFixed(2))
+        finalGrade: typeof MarkData.sheetMarkForIntermediate.finalGrade === 'number' ? MarkData.sheetMarkForIntermediate.finalGrade.toFixed(2) : null,
       }
       tableRows.push(rowIntermediate);
       console.log("Intermediate---",rowIntermediate)
@@ -544,7 +544,7 @@ const [TableFlag, setTableFlag]= useState("InProgress");
         MaMH: MarkData.sheetMarkForAdvanced.courseId,
         TenMonHoc: MarkData.sheetMarkForAdvanced.courseName,
         courseLevel: MarkData.sheetMarkForAdvanced.courseLevel,
-        finalGrade: parseFloat((MarkData.sheetMarkForAdvanced.finalGrade).toFixed(2))
+        finalGrade: typeof MarkData.sheetMarkForAdvanced.finalGrade === 'number' ? MarkData.sheetMarkForAdvanced.finalGrade.toFixed(2) : null,
       }
       tableRows.push(rowAdvanced);
       console.log("Advanced---",rowAdvanced)

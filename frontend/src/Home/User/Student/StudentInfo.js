@@ -113,7 +113,7 @@ function StudentInFo() {
         const response = await axios.get(`http://localhost:8080/student/${StudentUserID}/credits-gpa`);
         const { data } = response.data;
         console.log(data)
-        const GPA = parseFloat((data.gpaOnScaleFour).toFixed(2));
+        const GPA =  typeof data.gpaOnScaleFour === 'number' ? data.gpaOnScaleFour.toFixed(2) : null;
         setstudentGPA(GPA);
         
       } catch (error) {
