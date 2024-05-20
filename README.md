@@ -10,7 +10,7 @@ git clone https://github.com/thinhtruong2109/School_Management_System.git
 cd .\School_Management_System\ 
 ```
 ### Cách chạy dự án
-Trước hết ta phải chạy ```backend``` của hệ thống(ví backend được kết nối với realtime database nên tốc độ load có thể hơi chậm)
+Trước hết ta phải chạy ```backend``` của hệ thống(vì backend được kết nối với realtime database nên tốc độ load có thể hơi chậm)
 
 Cách 1: Sử dụng câu lệnh để tới package được chạy từ trước của source code để khởi động ```Backend```
 ```
