@@ -105,7 +105,7 @@ function Teachers()
           const response = await axios.get(`http://localhost:8080/courseclass/getClassOfTeacher?teacherId=${TeacherUserID}`);
           const tableRows = [];
           for (const classData of response.data.data) {
-            const tinChi = classData.courseLevel === "BEGINNER" ? "3" : "5";
+            const tinChi = classData.courseLevel === "BEGINNER" ? "3" : "4";
             const row = {
               IdMonHoc: classData.id,
               MaMH: classData.courseId,
