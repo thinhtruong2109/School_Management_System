@@ -117,7 +117,6 @@ function HocTap() {
       });
   }
 
-
 function updateTableDataInProgress(inProgressData) {
   // Create a new array to store the table rows
   const tableRows = [];
