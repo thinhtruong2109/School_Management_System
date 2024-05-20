@@ -1,0 +1,23 @@
+/* star.css */
+body {
+    position: relative;
+    /* Đảm bảo body có đủ chiều cao để chứa cả ngôi sao và nội dung của trang */
+  }
+  
+  .star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ngăn các sự kiện chuột từ các ngôi sao để chúng không làm ảnh hưởng đến các phần tử khác */
+    mix-blend-mode: screen; /* Kết hợp các ngôi sao với nền theo chế độ "screen" */ /* Đặt z-index để đưa các ngôi sao lên trên nền nhưng vẫn phía sau các phần tử khác */
+  }
+  
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white; /* Màu của ngôi sao */
+    border-radius: 50%; /* Đảm bảo ngôi sao là hình tròn */
+  }
