@@ -1,7 +1,7 @@
 # School_Management_System
  Group 1
 
-# School_Management_System
+ 
  Đây là repository chứa source code FrontEnd và BackEnd của nhóm.
 
 ## Cách clone source code về máy
